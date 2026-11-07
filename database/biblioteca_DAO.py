@@ -22,6 +22,7 @@ class BibliotecaDAO:
             for row in cursor.fetchall():
                 result.append(Biblioteca(row[0],row[1],row[2]))
             cursor.close()
+            cnx.close()
             return result
         else:
             print("Connection Error")

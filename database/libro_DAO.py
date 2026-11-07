@@ -27,6 +27,7 @@ class LibroDAO:
 
 
                 print(result)
+                cnx.close()
                 cursor.close()
                 return result
             elif biblioteca is None and genre is not None:
@@ -41,6 +42,7 @@ class LibroDAO:
                     result.append(Libro(row[0], row[1], row[2], row[3], row[4], row[5]))
 
                 cnx.close()
+                cursor.close()
 
                 return result
             elif biblioteca is not None and genre is None:
@@ -58,6 +60,7 @@ class LibroDAO:
                     result.append(Libro(row[0], row[1], row[2], row[3], row[4], row[5]))
 
                 cnx.close()
+                cursor.close()
                 return result
 
             elif biblioteca is not None and genre is not None:
@@ -71,6 +74,7 @@ class LibroDAO:
                 for row in cursor.fetchall():
                     result.append(Libro(row[0], row[1], row[2], row[3], row[4], row[5]))
                 cursor.close()
+                cnx.close()
 
                 return result
 
@@ -89,6 +93,7 @@ class LibroDAO:
                     insie.append(row[3])
             print(insie)
             cursor.close()
+            cnx.close()
             return insie
 
 

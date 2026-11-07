@@ -32,4 +32,7 @@ class Model:
     def get_biblioteche(self):
         """ Restituisce la lista di tutte le biblioteche."""
         # TODO
+
         return self._biblioteca_dao.select_all()
+
+
